@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Mission Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>OpenClaw Mission Control</h1>
+    <div class="dashboard-container">
+
+        <section id="config-section" class="dashboard-panel">
+            <h2>Configuration</h2>
+            <p>Load and edit OpenClaw settings.</p>
+            <button onclick="loadConfig()">Load Config</button>
+            <div id="config-editor">
+                <textarea id="configContent" rows="20" cols="80" placeholder="Configuration will appear here..."></textarea>
+                <br>
+                <button onclick="saveConfig()">Save Changes</button> (Note: requires backend implementation)
+            </div>
+            <div id="configStatus" class="status-message"></div>
+        </section>
+
+        <section id="gateway-section" class="dashboard-panel">
+            <h2>Gateway Control</h2>
+            <p>Manage the OpenClaw Gateway service.</p>
+            <button onclick="gatewayAction('status')">Status</button>
+            <button onclick="gatewayAction('start')">Start</button>
+            <button onclick="gatewayAction('stop')">Stop</button>
+            <button onclick="gatewayAction('restart')">Restart</button>
+            <pre id="gatewayOutput"></pre>
+            <div id="gatewayStatus" class="status-message"></div>
+        </section>
+
+        <section id="monitoring-section" class="dashboard-panel">
+            <h2>Monitoring</h2>
+            <p>View usage reports and logs.</p>
+            <button onclick="getUsageReport()">OpenRouter Usage</button>
+            <button onclick="fetchOpenclawLog()">OpenClaw Log</button>
+            <pre id="usageReport"></pre>
+            <pre id="openclawLog"></pre>
+            <div id="monitoringStatus" class="status-message"></div>
+        </section>
+
+        <section id="cron-section" class="dashboard-panel">
+            <h2>Cron Jobs</h2>
+            <p>Manage automated tasks.</p>
+            <button onclick="listCronJobs()">List Jobs</button>
+            <!-- Add/Edit/Delete forms/buttons would go here -->
+            <pre id="cronJobsOutput"></pre>
+            <div id="cronStatus" class="status-message"></div>
+        </section>
+
+        <section id="calendar-section" class="dashboard-panel">
+            <h2>Calendar</h2>
+            <p>View upcoming events.</p>
+            <button onclick="fetchCalendarEvents()">Load Events</button>
+            <pre id="calendarEventsOutput"></pre>
+            <div id="calendarStatus" class="status-message"></div>
+        </section>
+
+        <section id="safe-commands-section" class="dashboard-panel">
+            <h2>Safe Commands</h2>
+            <p>Run predefined, safe OpenClaw commands.</p>
+            <button onclick="runSafeCommand('openclaw status')">Run 'openclaw status'</button>
+            <button onclick="runSafeCommand('openclaw sessions list')">Run 'openclaw sessions list'</button>
+            <button onclick="runSafeCommand('openclaw cron list')">Run 'openclaw cron list'</button>
+            <!-- Add more buttons for other safe commands -->
+            <pre id="safeCommandsOutput"></pre>
+            <div id="safeCommandsStatus" class="status-message"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
