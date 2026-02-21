@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: virtus-mission-control
+    runtime: node
+    repo: https://github.com/joshrussell2111-stack/mission-control-dashboard
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    plan: free
+    autoDeploy: true
