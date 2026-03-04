@@ -1,0 +1,1 @@
+import{j as e}from"./index-CJQtxj34.js";function r({title:a,badge:s,badgeClass:t="default",children:i}){return e.jsxs("div",{className:"widget-header",children:[e.jsx("h3",{className:"widget-title",children:a}),s&&e.jsxs("span",{className:`widget-badge ${t}`,children:[t==="live"&&e.jsx("span",{className:"pulse-dot"}),s]}),i]})}export{r as W};
