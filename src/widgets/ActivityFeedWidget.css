@@ -1,0 +1,100 @@
+.activity-feed-widget {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-icon {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--glass-highlight);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.btn-icon.active {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+}
+
+.activity-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--glass-highlight);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  animation: slideIn 0.3s ease;
+}
+
+.activity-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 60px;
+}
+
+.activity-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.activity-badge.info {
+  background: rgba(0, 212, 255, 0.2);
+  color: var(--accent-cyan);
+}
+
+.activity-badge.success {
+  background: rgba(0, 255, 136, 0.2);
+  color: var(--accent-green);
+}
+
+.activity-badge.warning {
+  background: rgba(255, 149, 0, 0.2);
+  color: var(--accent-orange);
+}
+
+.activity-badge.error {
+  background: rgba(255, 68, 68, 0.2);
+  color: var(--accent-red);
+}
+
+.activity-message {
+  color: var(--text-secondary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
